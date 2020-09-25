@@ -5,4 +5,4 @@ Original sourced from [Mutopia](https://www.mutopiaproject.org/cgibin/make-table
 
 This engraving also produces a MIDI file
 
-Background: Franz Schubert is famous for his [lieder](https://en.wikipedia.org/wiki/Lied), composing music to written poems. He essentially transformed the genre from simple songs into a regarded genre. An die Musik is an ode to music.
+Background: Franz Schubert is famous for his [lieder](https://en.wikipedia.org/wiki/Lied), composing music to written poems. He essentially transformed the genre from simple songs into a highly regarded genre. An die Musik is an ode to music.
