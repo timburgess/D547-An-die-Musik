@@ -68,7 +68,7 @@ pianoHautNotePart = {
  \clef treble
  \time 2/2
  \key re \major
- \set autoBeaming = ##f
+%  \set autoBeaming = ##f
  \pianoHautNoteIntro \pianoHautNoteCorps
 }
 
@@ -133,11 +133,22 @@ analysis = \lyricmode {
   % \offset StanzaNumber.X-offset #-3
   \set stanza  = #"D:"
   % For bare Roman numerals, \rN simply outputs the string.
-  \markup \rN { Ic }4
-  \markup \rN { Ic }4
-  \markup \rN { Ib }4
+  Ic
+  ""
+  ""
+  ""
+  ""
+  ""
+  ""
+  ""
+  Ib
+  ""
+  ""
+  ""
   \markup \rN { V 7 }
+  ""
   \markup \rN { V 7 }
+  ""
   % \markup \rN { V 6 5 }
   % \markup \rN { vii o 4 3 / IV }
   % \markup \rN { IV 6 }
