@@ -2,7 +2,7 @@
 \version "2.20.0"
 \language "italiano"
 
-\include "../lilypond-roman-numeral-tool/roman_numeral_analysis_tool.ily"
+\include "roman_numeral_analysis_tool.ily"
 
 % FORMAT FOR A4 and US Letter / FORMAT MIXTE ADAPTÉ POUR A4 ET LETTER US
 \paper {
