@@ -195,7 +195,41 @@ analysis = \lyricmode {
   \markup \rN { Vd 7 }
   ""
   ""
-  I  
+  I % ?
+  ""
+  ""
+  V
+  ""
+  V
+  ""
+  "-"
+  ""
+  \markup \rN { Vd 7 }
+  ""
+  Ib
+  ""
+  I
+  ""
+  \markup \rN { Vb 7 }
+  ""
+  \markup \rN { V 7 }
+  ""
+  I
+  ""
+  V
+  ""
+  "-"
+  ""
+  "-"
+  ""
+  Ib
+  I
+  ""
+  ""
+  \markup \rN { Vb 7 }
+  \markup \rN { Vc 7 }
+  ""
+  \markup \rN { V 7 }
   % \markup \rN { IV 6 }
   % \markup \rN { ii h 4 3 }
   % \markup \rN { Fr +6 }
