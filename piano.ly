@@ -230,6 +230,23 @@ analysis = \lyricmode {
   \markup \rN { Vc 7 }
   ""
   \markup \rN { V 7 }
+  ""
+  ""
+  ""
+  ""
+  ""
+  ""
+  ""
+  IV
+  ""
+  ""
+  \markup \rN { ic o 7 }
+  ""
+  ""
+  Ic
+  ""
+  ""
+  \markup \rN { Vb 7 / vi }
   % \markup \rN { IV 6 }
   % \markup \rN { ii h 4 3 }
   % \markup \rN { Fr +6 }
