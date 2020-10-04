@@ -15,6 +15,7 @@
 
 \header {
  title = \markup { \fontsize #1.5 "An die Musik" }
+ subtitle = \markup { \fontsize #0.1 \bold "Piano voice" }
 }
 
 
@@ -260,6 +261,7 @@ analysis = \lyricmode {
   % \new Lyrics \lyricsto "mel" \poemeUn
   % \new Lyrics \lyricsto "mel" \poemeDeux
   \new PianoStaff <<
+    \override Score.BarNumber.break-visibility = ##(#f #t #t)
 	  \new Voice = "up" << \pianoHautNotePart >>
     \new Lyrics \with {
     } \lyricsto "up" { \analysis }
