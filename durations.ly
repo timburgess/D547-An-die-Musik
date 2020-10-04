@@ -3,6 +3,21 @@
 
 \include "roman_numeral_analysis_tool.ily"
 
+% FORMAT FOR A4 and US Letter / FORMAT MIXTE ADAPTÉ POUR A4 ET LETTER US
+\paper {
+ %paper-height = 279\mm
+ %paper-width = 210\mm
+ line-width = 180\mm
+ between-system-padding = #0.5
+ between-system-spacing = #0.5
+}
+
+\header {
+ title = \markup { \fontsize #1.5 "An die Musik" }
+ subtitle = \markup { \fontsize #0.1 \bold "Piano voice" }
+ subsubtitle = \markup { \fontsize #0.1 \bold "T. Burgess - MUSI101" }
+}
+
 % PIANO UPPER
 pianoHautNoteIntro = \relative do' {
 % 1
@@ -48,13 +63,76 @@ pianoHautNoteCorps = \relative do {
  } % end repeat
 }
 
+pianoHautNoteFin = \relative do' {
+% 43
+ <sol la dod mi>8^>[( <fad la re>) <fad la re>-. <fad la re>-.] <fad la re>4 r4
+}
 
 pianoHautNotePart = {
  \clef treble
  \time 2/2
  \key re \major
 %  \set autoBeaming = ##f
- \pianoHautNoteIntro \pianoHautNoteCorps
+ \pianoHautNoteIntro \pianoHautNoteCorps \pianoHautNoteFin
+}
+
+% PIANO BASS
+pianoBasNoteIntro = \relative do {
+
+% 1
+ r4 la( re) re^.
+ fad,2 la4-. la,-.
+}
+
+pianoBasNoteCorps = \relative do, {
+ \repeat volta 2 {
+
+% 3 23
+ re4 r r2
+
+% 4 24
+ r4 fad( si) sold-.
+ la4 r la r
+ re4^. la( re) re^.
+ fad,2(sol)
+
+% 8 28
+ la4( lad si2)
+ dod( re)
+ la4( la' sold sol)
+ fad4( re dod la)
+
+% 12 32
+ re4( la8[ la'] sold4 sol)
+ fad4(re dod4. la8)
+ re2( mi4 fad)
+ sol2( sold)
+
+% 16 36
+ la2( lad)
+ si2( sold)
+ la2( la,)
+ re4 r r2
+
+% 20 40
+ <sol,, sol'>2 r8 sol'-.[ si-. dod-.]
+ <re, re'>2 r8 re'^.[ mi^. fad^.]
+ <sol, sol'>2 la
+ } % end repeat
+}
+
+pianoBasNoteFin = \relative do, {
+% 43
+ <re re'>2. r4
+}
+
+
+pianoBasNotePart = {
+ \clef bass
+ \time 2/2
+ \key re \major
+ \set autoBeaming = ##f
+ \pianoBasNoteIntro \pianoBasNoteCorps \pianoBasNoteFin
 }
 
 
@@ -134,7 +212,10 @@ analysis = \lyricmode {
   \markup \rN { V }4
 }
 
-\new Staff <<
-  \new Voice \pianoHautNotePart
-  \new Lyrics \analysis
->>
+  \new PianoStaff <<
+    \override Score.BarNumber.break-visibility = ##(#f #t #t)
+	  \new Voice \pianoHautNotePart
+    \new Lyrics \analysis
+    \new Staff \pianoBasNotePart
+  >>
+
