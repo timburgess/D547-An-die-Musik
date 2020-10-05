@@ -1,10 +1,9 @@
-
-\version "2.20.0"
+\version "2.20"
 \language "italiano"
 
 \include "roman_numeral_analysis_tool.ily"
 
-% FORMAT FOR A4 and US Letter / FORMAT MIXTE ADAPTÉ POUR A4 ET LETTER US
+% FORMAT FOR A4 and US Letter
 \paper {
  %paper-height = 279\mm
  %paper-width = 210\mm
@@ -15,9 +14,9 @@
 
 \header {
  title = \markup { \fontsize #1.5 "An die Musik" }
- subtitle = \markup { \fontsize #0.1 \bold "Piano voice" }
+ subtitle = \markup { \fontsize #0.1 \bold "Klavierbegleitung" }
+ subsubtitle = \markup { \fontsize #0.1 \bold "T. Burgess - MUSI101" }
 }
-
 
 % PIANO UPPER
 pianoHautNoteIntro = \relative do' {
@@ -25,7 +24,6 @@ pianoHautNoteIntro = \relative do' {
  <la re fad>8[ <la re fad> <la re fad> <la re fad>] <la re fad>[ <la re fad> <la re fad> <la re fad>]
  <la re la'>[ <la re la'> <la re la'> <la re la'>] <la dod sol'>[ <la dod sol'> <sol la dod mi> <sol la dod mi>]
 }
-
 pianoHautNoteCorps = \relative do {
  \repeat volta 2 {
  
@@ -36,10 +34,10 @@ pianoHautNoteCorps = \relative do {
  <la re fad>8[ <la re fad> <la re fad> <la re fad>] <fad re' fad>[ <fad re' fad> <si re fad> <si re fad>]
  r8 <la re fad>[ <la re fad> <la re fad>] r <la dod sol'>[ <la dod sol'> <la dod sol'>]
  r8 <la re fad>[ <la re fad> <la re fad>] <la re fad>[ <la re fad> <la re fad> <la re fad>]
- <la re la'>8[ <la re la'> <la re la'> <la re la'>] <si re si'>[ <si re si'> <si re si'> <si re si'>] \clef bass
+ <la re la'>8[ <la re la'> <la re la'> <la re la'>] <si re si'>[ <si re si'> <si re si'> <si re si'>]
  
 % 8 28
- r8 <mi, sol dod>[ <mi sol dod> <mi sol dod>] r <re fad re'>[ <re fad re'> <re fad re'>] \clef treble
+ r8 <mi, sol dod>[ <mi sol dod> <mi sol dod>] r <re fad re'>[ <re fad re'> <re fad re'>]
  r8 <sol la mi'>[ <sol la mi'> <sol la mi'>] r <fad la fad'>[ <fad la fad'> <fad la fad'>]
  <la dod mi>8[ <la dod mi> <la dod la'> <la dod la'>] <si re la'>[ <si re la'> <dod mi la> <dod mi la>]
  <re fad la>8[ <re fad la> <re fad la> <re fad la>] <mi sol la>[ <mi sol la> <mi sol la> <mi sol la>]
@@ -65,15 +63,18 @@ pianoHautNoteCorps = \relative do {
  } % end repeat
 }
 
+pianoHautNoteFin = \relative do' {
+% 43
+ <sol la dod mi>8^>[( <fad la re>) <fad la re>-. <fad la re>-.] <fad la re>4 r4
+}
+
 pianoHautNotePart = {
  \clef treble
  \time 2/2
  \key re \major
-%  \set autoBeaming = ##f
- \pianoHautNoteIntro \pianoHautNoteCorps
+ \pianoHautNoteIntro \pianoHautNoteCorps \pianoHautNoteFin
 }
 
-% PIANO BASS
 pianoBasNoteIntro = \relative do {
 
 % 1
@@ -118,167 +119,100 @@ pianoBasNoteCorps = \relative do, {
  } % end repeat
 }
 
+pianoBasNoteFin = \relative do, {
+% 43
+ <re re'>2. r4
+}
 
 pianoBasNotePart = {
  \clef bass
  \time 2/2
  \key re \major
- \set autoBeaming = ##f
-%  \pianoBasNoteIntro \pianoBasNoteCorps \pianoBasNoteFin
- \pianoBasNoteIntro \pianoBasNoteCorps
+%  \set autoBeaming = ##f
+ \pianoBasNoteIntro \pianoBasNoteCorps \pianoBasNoteFin
 }
 
 
 analysis = \lyricmode {
-  \override LyricText.self-alignment-X = #-0.6
-  % \offset StanzaNumber.X-offset #-3
-  \set stanza  = #"D:"
-  % For bare Roman numerals, \rN simply outputs the string.
-  Ic
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  Ib
-  ""
-  ""
-  ""
+  \set stanza = \markup \keyIndication { D }
+  \markup \rN { Ic }1
+  \markup \rN { Ib }2
+  \markup \rN { V 7 }4
   \markup \rN { V 7 }
-  ""
-  \markup \rN { V 7 }
-  ""
-  I
-  Ic
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  vi
-  ""
+  \markup \rN { I }8
+  \markup \rN { Ic }1
+  \markup \rN { "" }4
+  \markup \rN { "" }8
+  \markup \rN { vi }4
   \markup \rN { vii o 7 / V }
-  ""
-  Ic
-  ""
-  ""
+  \markup \rN { "" }8
+  \markup \rN { Ic }2
   \markup \rN { V 7 }
-  ""
-  ""
-  Ic
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  Ib
-  ""
-  ""
-  ""
-  IV
-  ""
-  ""
-  ""
-  \markup \rN { viib o }
-  \markup \rN { vii o / vi }
-  ""
-  ""
-  \markup \rN { V 7 / V }
-  ""
+  \markup \rN { Ic }2.
+  \markup \rN { "" }8
+  \markup \rN { Ib }2
+  \markup \rN { IV }2
+  \markup \rN { viib o }4
+  \markup \rN { vii o / vi }4.
+  \markup \rN { "" }8
+  \markup \rN { V 7 / V }4.
+  \markup \rN { Vd 7 }2
+  \markup \rN { I }4.
+  \markup \rN { V }4
+  \markup \rN { V }
+  \markup \rN { (PT)vi 7  }
   \markup \rN { Vd 7 }
-  ""
-  ""
-  I % ?
-  ""
-  ""
-  V
-  ""
-  V
-  ""
-  "-"
-  ""
-  \markup \rN { Vd 7 }
-  ""
-  Ib
-  ""
-  I
-  ""
+  \markup \rN { Ib }
+  \markup \rN { I }
   \markup \rN { Vb 7 }
-  ""
   \markup \rN { V 7 }
-  ""
-  I
-  ""
-  V
-  ""
-  "-"
-  ""
-  "-"
-  ""
-  Ib
-  I
-  ""
-  ""
-  \markup \rN { Vb 7 }
-  \markup \rN { Vc 7 }
-  ""
-  \markup \rN { V 7 }
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  ""
-  IV
-  ""
-  ""
+  \markup \rN { I }
+  \markup \rN { V }
+  \markup \rN { "-" }
+  \markup \rN { "-" }
+  \markup \rN { Ib }8
+  \markup \rN { I }4.
+  \markup \rN { Vb 7 }8
+  \markup \rN { Vc 7 }4
+  \markup \rN { V 7 }4
+  \markup \rN { I }4.
+  \markup \rN { Vc 7 }4
+  \markup \rN { "-" }8
+  \markup \rN { "-" }4
+  \markup \rN { VI }2
   \markup \rN { ic o 7 }
-  ""
-  ""
-  Ic
-  ""
-  ""
+  \markup \rN { Ic }
   \markup \rN { Vb 7 / vi }
-  % \markup \rN { IV 6 }
-  % \markup \rN { ii h 4 3 }
-  % \markup \rN { Fr +6 }
-  % \markup \rN { I 6 4 }
-  % \markup \rN { vii o 7 / vi }
+  \markup \rN { vi }
+  \markup \rN { "-" }
+  \markup \rN { Ic }
+  \markup \rN { V }4.
+  \markup \rN { I }8
+  \markup \rN { I }2
+  \markup \rN { "" }8
+  \markup \rN { Vc 7 }8
+  \markup \rN { Ib }8
+  \markup \rN { "-" }4
+  \markup \rN { IVc }4.
+  \markup \rN { IV }8
+  \markup \rN { IVb }8
+  \markup \rN { vii o }8
+  \markup \rN { IVc }4
+  \markup \rN { iiib }4.
+  \markup \rN { I }8
+  \markup \rN { iiid 7 }8
+  \markup \rN { Ib }8
+  \markup \rN { "-" }4
+  \markup \rN { iic }4
+  \markup \rN { V }8
+  \markup \rN { V }4
 }
 
-\score {
- <<
-  % \new Voice = "mel" << \meloNotePart >>
-  % \new Lyrics \lyricsto "mel" \poemeUn
-  % \new Lyrics \lyricsto "mel" \poemeDeux
   \new PianoStaff <<
+    \set PianoStaff.instrumentName = #"Klavier"
     \override Score.BarNumber.break-visibility = ##(#f #t #t)
-	  \new Voice = "up" << \pianoHautNotePart >>
-    \new Lyrics \with {
-    } \lyricsto "up" { \analysis }
-      
-  %  \new Dynamics = "dynamics" \pianoDynPart
-   \new Staff = "down" << \pianoBasNotePart >>
+	  \new Voice \pianoHautNotePart
+    \new Lyrics \analysis
+    \new Staff \pianoBasNotePart
   >>
- >>
-}
-
-
-  % \new Staff <<
-  %   \new Voice = "bass" { \bassline }
-  %   \new Lyrics \with {
-  %     % to control distance of analysis from staff
-  %     \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'((basic-distance . 6.5))
-  %   } \lyricsto "bass" { \analysis }
-  % >>
-
 
