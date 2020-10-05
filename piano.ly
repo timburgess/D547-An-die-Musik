@@ -168,8 +168,8 @@ analysis = \lyricmode {
   \markup \rN { V 7 }
   \markup \rN { I }
   \markup \rN { V }
-  \markup \rN { "-" }
-  \markup \rN { "-" }
+  \markup \rN { (PT)vi 7 }
+  \markup \rN { Vd 7 }
   \markup \rN { Ib }8
   \markup \rN { I }4.
   \markup \rN { Vb 7 }8
@@ -177,14 +177,13 @@ analysis = \lyricmode {
   \markup \rN { V 7 }4
   \markup \rN { I }4.
   \markup \rN { Vc 7 }4
-  \markup \rN { "-" }8
-  \markup \rN { "-" }4
+  \markup \rN { Ib 7 }4.
   \markup \rN { VI }2
-  \markup \rN { ic o 7 }
+  \markup \rN { vii o / V }
   \markup \rN { Ic }
   \markup \rN { Vb 7 / vi }
   \markup \rN { vi }
-  \markup \rN { "-" }
+  \markup \rN { vii o / V }
   \markup \rN { Ic }
   \markup \rN { V }4.
   \markup \rN { I }8
@@ -192,17 +191,18 @@ analysis = \lyricmode {
   \markup \rN { "" }8
   \markup \rN { Vc 7 }8
   \markup \rN { Ib }8
-  \markup \rN { "-" }4
-  \markup \rN { IVc }4.
+  \markup \rN { "-" }8
+  \markup \rN { IV }4.
+  \markup \rN { "" }8
   \markup \rN { IV }8
   \markup \rN { IVb }8
   \markup \rN { vii o }8
   \markup \rN { IVc }4
-  \markup \rN { iiib }4.
+  \markup \rN { I }4.
   \markup \rN { I }8
   \markup \rN { iiid 7 }8
   \markup \rN { Ib }8
-  \markup \rN { "-" }4
+  \markup \rN { V 7 / iv }4
   \markup \rN { iic }4
   \markup \rN { V }8
   \markup \rN { V }4
