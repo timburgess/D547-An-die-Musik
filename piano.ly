@@ -191,8 +191,8 @@ analysis = \lyricmode {
   \markup \rN { "" }8
   \markup \rN { Vc 7 }8
   \markup \rN { Ib }8
-  \markup \rN { "-" }8
-  \markup \rN { IV }4.
+  \markup \rN { IV }8
+  \markup \rN { "" }4.
   \markup \rN { "" }8
   \markup \rN { IV }8
   \markup \rN { IVb }8
